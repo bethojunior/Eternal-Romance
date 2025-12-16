@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "ES2020",
     "module": "commonjs",
     "outDir": "./dist",
+    "rootDir": ".",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -11,44 +13,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
-    }
-  }
+    },
+    "skipLibCheck": true
+  },
+  "include": ["src", "cli", "core", "domain", "infra", "@shared", "@types"]
 }
-
-// {
-//   "compilerOptions": {
-//     /* Runtime */
-//     "target": "ES2019",
-//     "module": "CommonJS",
-//     "outDir": "./dist",
-//     "rootDir": ".",
-
-//     /* Interop */
-//     "esModuleInterop": true,
-//     "moduleResolution": "node",
-
-//     /* Tipagem */
-//     "strict": true,
-//     "forceConsistentCasingInFileNames": true,
-
-//     /* Decorators (se for usar) */
-//     "experimentalDecorators": true,
-//     "emitDecoratorMetadata": true,
-
-//     /* DX */
-//     "baseUrl": ".",
-//     "paths": {
-//       "@/*": ["src/*"]
-//     },
-
-//     /* Types do framework */
-//     "typeRoots": ["@shared/@types", "./node_modules/@types"],
-
-//     /* Build de lib */
-//     "declaration": true,
-//     "declarationMap": true,
-//     "sourceMap": true
-//   },
-//   "include": ["src", "@shared/@types"],
-//   "exclude": ["node_modules", "dist", "infra", "prisma"]
-// }

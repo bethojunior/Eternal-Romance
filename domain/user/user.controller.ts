@@ -1,20 +1,19 @@
-import { Request, Response } from "express";
-import UserService from "../services/user.service";
+import UserService from '@/domain/user/user.service'
+import { Request, Response } from 'express'
 
 export default class UserController {
-  private userService: UserService;
+  private userService: UserService
 
   constructor(userService: UserService) {
-    this.userService = userService;
+    this.userService = userService
   }
 
-  async store(request: Request, response: Response): Promise<Response> 
-  {
+  async store(request: Request, response: Response): Promise<Response> {
     try {
-      const user = await this.userService.store(request.body);
-      return response.status(201).json(user);
+      const user = await this.userService.store(request.body)
+      return response.status(201).json(user)
     } catch (error) {
-      return response.status(400).json(error); 
+      return response.status(400).json(error)
     }
   }
 }

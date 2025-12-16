@@ -20,11 +20,9 @@ export async function initCommand(program: any) {
       try {
         Logger.info(`💖 Creating Eternal Romance project: ${name}`)
 
-        // 1️⃣ Copy base project
         Logger.info('Copying base structure...')
         await fs.copy(path.join(__dirname, '../../templates/project'), projectPath)
 
-        // 2️⃣ Generate module respecting your architecture
         Logger.info('Generating base module...')
 
         const templatesDir = path.join(__dirname, '../../templates/module')
@@ -47,7 +45,6 @@ export async function initCommand(program: any) {
           {}
         )
 
-        // 3️⃣ Install deps
         Logger.info('Installing dependencies...')
         await exec('yarn', ['install'], { cwd: projectPath })
 

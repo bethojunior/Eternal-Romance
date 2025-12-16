@@ -7,7 +7,6 @@ export class PrismaProvider {
       return await callback(prisma)
     } finally {
       await prisma.$disconnect()
-      console.log('Prisma disconnected.')
     }
   }
 }

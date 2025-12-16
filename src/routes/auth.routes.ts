@@ -1,12 +1,11 @@
-import { AuthRequest } from '../http/request/auth/auth.request'
-import { AuthController } from '../../core/auth/auth.controller'
+import { AuthLoginController } from '@/core/auth/login/auth-login.controller'
+import { AuthRequest } from '@/src/http/request/auth/auth.request'
 import { Router } from 'express'
 import { container } from 'tsyringe'
 
 const authRouter = Router()
 
-const authController = container.resolve(AuthController)
-
-authRouter.post('/login', AuthRequest, authController.handleLogin.bind(authController))
+const authController = container.resolve(AuthLoginController)
+authRouter.post('/auth/login', AuthRequest, authController.handle.bind(authController))
 
 export { authRouter }
