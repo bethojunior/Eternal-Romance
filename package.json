@@ -1,8 +1,11 @@
 {
-  "name": "704",
+  "name": "eternal-romance",
   "version": "1.0.0",
   "description": "",
   "main": "/src/index.js",
+  "bin": {
+    "eternal-romance": "dist/cli/index.cli.js"
+  },
   "scripts": {
     "build": "tsc",
     "start": "node dist/app.js",
@@ -13,8 +16,10 @@
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.21",
+    "@types/fs-extra": "^11.0.4",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.4.5"
   },
   "dependencies": {
@@ -22,8 +27,11 @@
     "@types/bull": "^4.10.4",
     "@types/node": "^20.12.8",
     "bull": "^4.16.5",
+    "chalk": "^5.6.2",
+    "commander": "^14.0.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "fs-extra": "^11.3.2",
     "mysql2": "^3.14.1",
     "prisma": "^6.7.0",
     "reflect-metadata": "^0.2.2",

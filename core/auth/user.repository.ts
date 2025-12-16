@@ -1,10 +1,10 @@
+import { UserEntity } from '@/@types/user/user.entity'
 import { injectable } from 'tsyringe'
-import { UserEntity } from '@types'
-import PrismaProvider from '../../infra/database/prisma/prisma.provider';
+import { PrismaProvider } from '../../infra/database/prisma/prisma.provider'
 
 @injectable()
 export default class UserRepository {
-  async store(props: UserEntity) {
+  async store(props: UserEntity): Promise<UserEntity> {
     return props
   }
 

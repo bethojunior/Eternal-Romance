@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 
-export default class PrismaProvider {
+export class PrismaProvider {
   static async use<T>(callback: (prisma: PrismaClient) => Promise<T>): Promise<T> {
     const prisma = new PrismaClient()
     try {
